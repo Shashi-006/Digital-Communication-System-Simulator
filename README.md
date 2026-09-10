@@ -1,103 +1,67 @@
-# Digital Communication System Simulator Using Python
+# Digital Communication System Simulator
 
-## Project Overview
+A Python-based digital communication system simulator that demonstrates **BPSK modulation, AWGN noise, coherent demodulation, and Bit Error Rate (BER) analysis**.
 
-This mini project simulates a basic digital communication system using Python.
+---
 
-The current version implements:
+## 📌 Project Overview
 
-- Random binary data generation
-- BPSK modulation
-- AWGN communication channel
-- Coherent BPSK demodulation
-- Bit Error Rate (BER) calculation
-- BER vs SNR analysis
-- Signal visualization using Matplotlib
+Digital communication systems transmit information from a source to a receiver through a communication channel.
 
-## System Block Diagram
+This project simulates a basic digital communication system using Python. The system generates random binary data, modulates it using **Binary Phase Shift Keying (BPSK)**, passes the signal through an **Additive White Gaussian Noise (AWGN)** channel, and then demodulates the received signal.
+
+The recovered data is compared with the original transmitted data to calculate the **Bit Error Rate (BER)**.
+
+---
+
+## 🎯 Objectives
+
+- Generate random binary data.
+- Perform BPSK modulation.
+- Simulate an AWGN communication channel.
+- Perform coherent BPSK demodulation.
+- Recover the transmitted binary data.
+- Calculate the number of bit errors.
+- Calculate Bit Error Rate (BER).
+- Analyze BER for different Signal-to-Noise Ratio (SNR) values.
+- Visualize transmitted and received signals using Python plots.
+
+---
+
+## ⚙️ Technologies Used
+
+- **Python 3**
+- **NumPy** – numerical computations and signal processing
+- **Matplotlib** – signal visualization and plotting
+- **Git & GitHub** – version control and project hosting
+
+---
+
+## 📡 System Block Diagram
 
 ```text
-Binary Data
-     |
-     v
-BPSK Modulator
-     |
-     v
+Random Binary Data
+        │
+        ▼
+BPSK Modulation
+        │
+        ▼
+Transmitted Signal
+        │
+        ▼
 AWGN Channel
-     |
-     v
-BPSK Demodulator
-     |
-     v
-Recovered Data
-     |
-     v
-BER Analysis
-```
-
-## Requirements
-
-Python 3.x
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## How to Run
-
-Open a terminal in this project folder and run:
-
-```bash
-python main.py
-```
-
-The program displays:
-
-1. Original binary data
-2. BPSK transmitted waveform
-3. Received waveform after AWGN
-4. BER vs SNR graph
-5. Console results showing bit errors and BER
-
-## Main Parameters
-
-Open `main.py` and change:
-
-```python
-NUM_BITS = 100
-SAMPLES_PER_BIT = 100
-SNR_DB = 6
-AMPLITUDE = 1.0
-CARRIER_FREQUENCY = 5
-```
-
-## Project Flow
-
-1. Generate random bits.
-2. Convert bits into a BPSK waveform.
-3. Add AWGN noise according to the selected SNR.
-4. Demodulate the received waveform.
-5. Compare transmitted and recovered bits.
-6. Calculate BER.
-7. Repeat the experiment for multiple SNR values.
-8. Plot BER against SNR.
-
-## Future Enhancements
-
-The project can be extended with:
-
-- ASK modulation
-- FSK modulation
-- QPSK modulation
-- Constellation diagrams
-- Eye diagrams
-- GUI using Tkinter
-- User-entered binary data
-- CSV result export
-- Comparison of BER for multiple modulation schemes
-
-## Educational Purpose
-
-This project is intended as an ECE mini project for understanding the basic operation of a digital communication system and the effect of channel noise on transmitted information.
+        │
+        ▼
+Received Signal
+        │
+        ▼
+BPSK Demodulation
+        │
+        ▼
+Recovered Binary Data
+        │
+        ▼
+BER Calculation
+        │
+        ▼
+Performance Analysis
